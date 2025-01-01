@@ -1,6 +1,3 @@
-# print(2)
-# print(3)
-
 def is_prime(number):
     if number % 6 == 1 or number % 6 == 5:
         if prp(number) == True:
@@ -20,7 +17,6 @@ def primes_below(start, limit):
         if is_prime(i) == True:
             with open("primes.csv", "a") as primes_file:
                 primes_file.write(f"\n{i}")
-            # print(i)
 
 def prp(pp):
     if pp % 2 == 1:
@@ -48,9 +44,8 @@ def factorise(number):
 
 def get_last_prime():
     with open("primes.csv", "r") as primes_file:
-        # primes = sorted(primes_file)
         primes = primes_file.readlines()
         last_prime = list(primes)[-1]
     return int(last_prime)
 
-primes_below(get_last_prime(), 50000000)
+primes_below(get_last_prime(), 100000000)
